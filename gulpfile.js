@@ -40,7 +40,7 @@ jsSourcesST = ['./scripts/functions.js', './scripts/app.js']
 
 
 jsLibrary = [
-  'zepto',
+  'jquery',
   'iscroll'
 ]
 
@@ -108,6 +108,8 @@ optionsPluginsJS.push(new webpack.DefinePlugin({
 
 Object.keys(json_pages_html).map(function(key) {
   var generate_html = new HtmlWebpackPlugin({
+    title: 'Belatrix Exchange Rates App',
+    lang: 'en',
     key_page: key,
     filename: (json_pages_html[key].page || key) + '.html',
     template: 'index.ejs',
@@ -254,7 +256,7 @@ gulp.task('js', function() {
           ]
         })
       }, {
-        test: require.resolve('zepto'),
+        test: require.resolve('jquery'),
         loader: 'imports-loader?this=>window'
       }, {
         test: /\.html$/,

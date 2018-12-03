@@ -10,7 +10,8 @@ export default class Management {
         fullHeight: window.innerHeight,
         fullWidth: window.innerWidth,
         identifier: null,
-        datafixer: null
+        euExchange: 0,
+        usdExchange: ""
       },
       getters: {},
       mutations: {
@@ -26,9 +27,13 @@ export default class Management {
         identifier(state, identifier) {
           state.identifier = identifier
         },
-        datafixer(state, datafixer) {
-          state.datafixer = datafixer;
+        euExchange(state, euExchange) {
+          state.euExchange = euExchange;
+        },
+        usdExchange(state, usdExchange) {
+          state.usdExchange = usdExchange;
         }
+
       },
       strict: options.debug
     })

@@ -1,18 +1,26 @@
 /* eslint-disable camelcase, no-useless-escape */
-import $ from 'zepto'
+import $ from 'jquery'
 
 import Vue from 'vue'
 import VueTouch from 'vue-touch'
+import Vue2Storage from 'vue2-storage'
+
 
 import Route from './route'
 import Management from './management'
 
 import App from './../template/page.vue'
-import stMain from './../template/main/st-main.vue'
+import btMain from './../template/main/bt-main.vue'
 
 Vue.use(VueTouch, {
   name: 'v-touch'
 })
+
+Vue.use(Vue2Storage, {
+  prefix: 'belatrix_',
+  driver: 'local'
+});
+
 
 // Vue.use(VueRouter)
 // Vue.use(VueMeta)
@@ -31,7 +39,7 @@ global.isMobile = (function(a) {
 const route = new Route(Vue, {
   path: window.location.pathname,
   json_pages: process.env.PAGES,
-  Main: stMain
+  Main: btMain
 })
 var router = route.router
 
@@ -59,7 +67,6 @@ new Vue({
     })
   },
   data: {
-    nroCalls: 0,
     title: false,
     meta: []
   },
