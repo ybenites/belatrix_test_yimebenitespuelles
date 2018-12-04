@@ -27,17 +27,16 @@
     "html-loader": "^0.5.5",
     "img-loader": "^3.0.1",
     "imports-loader": "^0.8.0",
-    "iscroll": "^5.2.0",
     "jquery": "^3.3.1",
     "lost": "^8.2.1",
     "node-sass": "^4.10.0",
     "object-assign": "^4.1.1",
     "oldie": "^1.3.0",
     "postcss-assets": "^5.0.0",
-    "postcss-preset-env": "^6.4.0",
     "postcss-font-magician": "^2.1.1",
     "postcss-loader": "^3.0.0",
     "postcss-media-minmax": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
     "postcss-sassy-mixins": "^2.1.0",
     "postcss-smart-import": "^0.7.6",
     "postcss-strip-inline-comments": "^0.1.5",
@@ -54,21 +53,25 @@
     "vue": "^2.5.16",
     "vue-loader": "^15.0.4",
     "vue-meta": "^1.5.0",
+    "vue-numeric": "^2.3.0",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.16",
     "vue-touch": "^2.0.0-beta.4",
-    "vuex": "^3.0.1",
-    "webpack-stream": "^4.0.3",
     "vue2-storage": "^3.4.0",
-    "vue-numeric": "^2.3.0"
+    "vuex": "^3.0.1",
+    "webpack-stream": "^4.0.3"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.26",
+    "babel-jest": "^23.6.0",
     "gulp": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
+    "vue-jest": "^3.0.1",
     "webpack": "^3.11.0"
   },
   "scripts": {
-    "sph": "webpack --config webpack.config.js"
+    "belatrix_unit": "NODE_ENV=test jest --no-cache"
   },
   "standard": {
     "globals": [

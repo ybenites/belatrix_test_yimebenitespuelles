@@ -40,8 +40,7 @@ jsSourcesST = ['./scripts/functions.js', './scripts/app.js']
 
 
 jsLibrary = [
-  'jquery',
-  'iscroll'
+  'jquery'
 ]
 
 
