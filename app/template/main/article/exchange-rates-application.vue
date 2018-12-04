@@ -48,10 +48,7 @@ export default {
   watch: {
     usdValue(usdValue) {
       if (usdValue === 0) {
-        this.$refs.btnCalculate.$el.setAttribute("disabled", "disabled");
-        this.$refs.btnCalculate.disableAll();
-        this.$refs.refInputEu.$el.classList.remove("eu-input-highligth");
-        this.$store.commit('euExchange', 0);
+        this.cleanOrigin();
       } else {
         this.$refs.btnCalculate.enableAll();
         this.$refs.btnCalculate.$el.removeAttribute("disabled");
@@ -60,20 +57,33 @@ export default {
     }
   },
   methods: {
+    cleanOrigin() {
+      this.$refs.btnCalculate.$el.setAttribute("disabled", "disabled");
+      this.$refs.btnCalculate.disableAll();
+      this.$refs.refInputEu.$el.classList.remove("eu-input-highligth");
+      this.$store.commit('euExchange', 0);
+    },
     onTap() {
       var _this = this;
       const dataStorage = this.$storage.get('exchangerates');
       if (!dataStorage) {
         this.$store.commit('loading', true);
-        $.getJSON('http://data.fixer.io/api/latest?access_key=87ff8a6aeebb7e49652d4c6b0b80b411&symbols=USD', function(remoteData) {
-          _this.$store.commit('loading', false);
-          // storeage exchange rates
-          _this.$storage.set('exchangerates', {
-            key: remoteData.rates.USD
-          }, {
-            ttl: 10 * 60 * 1000
-          });
-          _this.calculate(remoteData.rates.USD);
+        $.ajax({
+          url: 'http://data.fixer.io/api/latest?access_key=87ff8a6aeebb7e49652d4c6b0b80b411&symbols=USD',
+          dataType: "json",
+          success: function(response) {
+            _this.$store.commit('loading', false);
+            // storeage exchange rates
+            _this.$storage.set('exchangerates', {
+              key: response.rates.USD
+            }, {
+              ttl: 10 * 60 * 1000
+            });
+            _this.calculate(response.rates.USD);
+          },
+          error: function() {
+            _this.cleanOrigin();
+          }
         });
       } else {
         this.calculate(dataStorage.key);

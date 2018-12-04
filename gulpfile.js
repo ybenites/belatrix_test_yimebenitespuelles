@@ -386,7 +386,6 @@ gulp.task('move', function() {
   //     .pipe(gulpif(env === 'production', gulp.dest(outputDir + 'svg')))
   gulp.src('app/videos/**/*.*').pipe(gulpif(env === 'production', gulp.dest(outputDir + 'videos')))
   gulp.src('app/fonts/**/*.*').pipe(gulp.dest(outputDir + 'fonts'));
-  gulp.src('app/data/**/*.*').pipe(gulp.dest(outputDir + 'data'));
 
 })
 

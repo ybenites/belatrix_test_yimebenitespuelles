@@ -2,7 +2,7 @@
   <div class="content-wireframe">
     <div class="circle-center">
     </div>
-    <div class="">
+    <div class="content-small-square">
       <div class="small-square">
 
       </div>
@@ -37,13 +37,18 @@ export default {}
     border-radius: 50%;
     margin-bottom: 20px;
 }
-.small-square {
-    margin: 15px auto;
-    width: 150px;
-    height: 30px;
-    background-color: #d8d8d8;
+.content-small-square {
     @include breakpoint($d_small) {
-        @include gallery(4,30px);
+        @include clearfix;
+    }
+    .small-square {
+        margin: 15px auto;
+        width: 150px;
+        height: 30px;
+        background-color: #d8d8d8;
+        @include breakpoint($d_small) {
+            @include gallery(4,30px);
+        }
     }
 }
 </style>

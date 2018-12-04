@@ -13,21 +13,6 @@ module.exports = {
     require("postcss-media-minmax"),
     require("postcss-font-magician")({
       custom: {
-        "Glyphicons Halflings": {
-          variants: {
-            normal: {
-              100: {
-                url: {
-                  eot: initial_path + "fonts/bootstrap/glyphicons-halflings-regular.eot",
-                  ttf: initial_path + "fonts/bootstrap/glyphicons-halflings-regular.ttf",
-                  woff: initial_path + "fonts/bootstrap/glyphicons-halflings-regular.woff",
-                  woff2: initial_path + "fonts/bootstrap/glyphicons-halflings-regular.woff2",
-                  svg: initial_path + "fonts/bootstrap/glyphicons-halflings-regular.svg"
-                }
-              }
-            }
-          }
-        },
         "FontAwesome": {
           variants: {
             normal: {
@@ -38,20 +23,6 @@ module.exports = {
                   woff: initial_path + "fonts/font-awesome-4.7.0/fontawesome-webfont.woff",
                   woff2: initial_path + "fonts/font-awesome-4.7.0/fontawesome-webfont.woff2",
                   svg: initial_path + "fonts/font-awesome-4.7.0/fontawesome-webfont.svg"
-                }
-              }
-            }
-          }
-        },
-        "VideoJS": {
-          variants: {
-            normal: {
-              normal: {
-                url: {
-                  eot: initial_path + "fonts/video.js-6.2.5/VideoJS.eot",
-                  ttf: initial_path + "fonts/video.js-6.2.5/VideoJS.ttf",
-                  woff: initial_path + "fonts/video.js-6.2.5/VideoJS.woff",
-                  svg: initial_path + "fonts/video.js-6.2.5/VideoJS.svg"
                 }
               }
             }
